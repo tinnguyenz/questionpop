@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.questionBtn {
+  padding: 5px 20px;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 100ms ease;
+  color: #000000;
+  border: 2px solid;
+  hover {
+    color: #c1c1c1 !important;
+  }
+}
+
+.questionBtn:hover {
+  color: #c1c1c1 !important;
+}

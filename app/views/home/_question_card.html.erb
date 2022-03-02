@@ -1,0 +1,33 @@
+<div class="Polaris-Card__Section item">
+  <div class="Polaris-ResourceList__Content">
+          <div class="Polaris-ResourceList__Attributes">
+            <div class="title">
+              <div class="Polaris-ResourceList__AttributeOne">
+                <h2 class="brief"><%= question.short_question_content %></h2>
+                <p>by <%= question.customer_name %></p>
+              </div>
+            </div>
+            <div class="Polaris-ResourceList__AttributeTow "></h2>
+              <a
+                class="Polaris-Link"
+                href="#"
+                onClick="newModal('https://questionpop.herokuapp.com/questions/<%= question.id%>', 'Question detail')"
+                data-polaris-unstyled="true">View detail
+              </a>
+            </div>
+            <div class="Polaris-ResourceList__AttributeThree" style="padding-right: 10px"><%= question.created_at %></div>
+            <div style="width: 150px">
+              <div class="Polaris-ResourceList__AttributeFour">
+                <% if question.is_answered %>
+                  <div class="Polaris-ResourceList__Badge"><span class="Polaris-Badge">Answered</span></div>
+                <% else %>
+
+                  <button type="button" onclick="markAnswer(this, <%= question.id %>);" id="answerBtn" class="Polaris-Button Polaris-Button--destructive Polaris-Button--sizeSlim">
+                    <span class="Polaris-Button__Content"><span>Mark 'answered'</span></span>
+                  </button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>

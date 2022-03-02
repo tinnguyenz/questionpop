@@ -1,0 +1,49 @@
+<form method='post' action="<%= @base_url %>contact" data-shopify-app-submit="unicorn_form_submit">
+<dl class="Polaris-DescriptionList">
+  <dt class="Polaris-DescriptionList__Term">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <h2 class="Polaris-Heading">Your Email</h2>
+      </div>
+      <div class="Polaris-Card__Section" style="padding-top: 0">
+        <p>Please provide us your email then we will get back to you within 24 hours".
+        </p>
+      </div>
+    </div>
+  </dt>
+  <dd class="Polaris-DescriptionList__Description">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <div class="Polaris-TextField">
+          <input id="contact_email" name="email" value="<%= @contact.email %>" class="Polaris-TextField__Input" aria-labelledby="TextField60Label" aria-invalid="false">
+          <div class="Polaris-TextField__Backdrop"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <dt class="Polaris-DescriptionList__Term">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <h2 class="Polaris-Heading">Your Inqueries</h2>
+      </div>
+      <div class="Polaris-Card__Section" style="padding-top: 0">
+        <p>Any support we can help with?
+        </p>
+      </div>
+    </div>
+  </dt>
+  <dd class="Polaris-DescriptionList__Description">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <div class="Polaris-TextField">
+          <input id="contact_content" name="content" value="<%= @contact.content %>" class="Polaris-TextField__Input" aria-labelledby="TextField60Label" aria-invalid="false">
+          <div class="Polaris-TextField__Backdrop"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</dl>
+<input type="hidden" id="shop_domain" name="shop_domain" value="<%= @shop_domain %>" />
+</form>

@@ -1,0 +1,69 @@
+<div class="Polaris-Card__Section" style="max-height: 400px;">
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header" style="padding-top: 0">
+      <h2 class="Polaris-Heading"><%= @question.customer_name %></h2>
+    </div>
+    <div class="Polaris-Card__Section" style="padding-top: 0; padding-bottom: 0;">
+      <p><%= @question.question_content %></p>
+    </div>
+  </div>
+  <% @question_and_answers.each do |item| %>
+    <% if item.class.name == 'QuestionContent' %>
+      <div class="Polaris-Card">
+        <div class="Polaris-Card__Header" style="padding-top: 0">
+          <h2 class="Polaris-Heading"><%= @question.customer_name %></h2>
+        </div>
+        <div class="Polaris-Card__Section" style="padding-top: 0; padding-bottom: 0;">
+          <p><%= item.content %></p>
+        </div>
+      </div>
+    <% else %>
+      <div class="Polaris-Card">
+        <div class="Polaris-Stack">
+          <div class="Polaris-Stack__Item Polaris-Stack__Item--fill"></div>
+          <div class="Polaris-Stack__Item">
+            <span class="Polaris-TextStyle--variationPositive"><%= item.content %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <br/>
+  <div>
+    <div class="Polaris-TextField">
+      <input id="answer_text" value="" placeholder="Answer to <%= @question.customer_name %>" class="Polaris-TextField__Input" aria-labelledby="TextField3Label" aria-invalid="false">
+      <div class="Polaris-TextField__Backdrop"></div>
+    </div>
+  </div>
+  <br/>
+  <div class="Polaris-Card__Footer">
+    <% if @flash_message %>
+      <div class="Polaris-Banner Polaris-Banner--statusSuccess" tabindex="0" role="status"
+        aria-live="polite" aria-labelledby="Banner4Heading" aria-describedby="Banner4Content"
+        style="float: left; margin-right: 20px; height: 80px; padding: 0.5rem;">
+        <div class="Polaris-Banner__Ribbon"><span class="Polaris-Icon Polaris-Icon--colorGreenDark Polaris-Icon--isColored Polaris-Icon--hasBackdrop"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><g fill-rule="evenodd"><circle fill="currentColor" cx="10" cy="10" r="9"></circle><path d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m2.293-10.707L9 10.586 7.707 9.293a1 1 0 1 0-1.414 1.414l2 2a.997.997 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414"></path></g></svg></span></div>
+        <div style="width: 330px;">
+          <div class="Polaris-Banner__Heading" id="Banner4Heading">
+            <p class="Polaris-Heading"><%= @flash_message %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="Polaris-ButtonGroup">
+      <div class="Polaris-ButtonGroup__Item">
+        <a target="_blank"
+          onclick="sendAnswer(this, '<%= @question.id %>', '<%= @base_url %>');"
+          id = "sendBtn"
+          class="Polaris-Button Polaris-Button--primary Polaris-Button--disabled"
+          rel="noopener noreferrer" data-polaris-unstyled="true">
+          <span class="Polaris-Button__Content">
+            <span>Send</span>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

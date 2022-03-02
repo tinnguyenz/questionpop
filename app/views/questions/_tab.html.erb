@@ -1,0 +1,37 @@
+  <div>
+    <ul role="tablist" class="Polaris-Tabs">
+      <li role="presentation" class="Polaris-Tabs__TabContainer">
+        <button id="all-questions" onclick="switchTab(this, '/all_questions');" role="tab"
+                tabindex="<%= @current_tab == '/all_questions' ? 0 : -1 %>"
+                class="Polaris-Tabs__Tab<%= @current_tab == '/all_questions' ? ' Polaris-Tabs__Tab--selected' : '' %>"
+                aria-selected="true" aria-controls="all-customers-content">
+          <span class="Polaris-Tabs__Title">All</span>
+        </button>
+      </li>
+      <li role="presentation" class="Polaris-Tabs__TabContainer">
+        <button id="answered-questions" onclick="switchTab(this, '/answered_questions');" role="tab"
+                tabindex="<%= @current_tab == '/answered_questions' ? 0 : -1 %>"
+                class="Polaris-Tabs__Tab<%= @current_tab == '/answered_questions' ? ' Polaris-Tabs__Tab--selected' : '' %>"
+                aria-selected="false" aria-controls="accepts-marketing-content">
+          <span class="Polaris-Tabs__Title">Answered</span>
+        </button>
+      </li>
+      <li role="presentation" class="Polaris-Tabs__TabContainer">
+        <button id="unanswered-questions" onclick="switchTab(this, '/unanswered_questions');" role="="tab""
+                tabindex="<%= @current_tab == '/unanswered_questions' ? 0 : -1 %>"
+                class="Polaris-Tabs__Tab<%= @current_tab == '/unanswered_questions' ? ' Polaris-Tabs__Tab--selected' : '' %>"
+                aria-selected="false" aria-controls="repeat-customers-content">
+          <span class="Polaris-Tabs__Title">Unanswered</span>
+        </button>
+
+
+      <li role="presentation" class="Polaris-Tabs__DisclosureTab">
+        <div><button tabindex="-1" class="Polaris-Tabs__DisclosureActivator" aria-controls="Popover1" aria-owns="Popover1" aria-haspopup="true" aria-expanded="false"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20"><path d="M6 10a2 2 0 1 1-4.001-.001A2 2 0 0 1 6 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 12 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 18 10z" fill-rule="evenodd"></path></svg></span></button></div>
+      </li>
+    </ul>
+    <div class="Polaris-Tabs Polaris-Tabs__TabMeasurer">
+      <li role="presentation" class="Polaris-Tabs__TabContainer"><button id="all-customersMeasurer" role="tab" tabindex="-1" class="Polaris-Tabs__Tab Polaris-Tabs__Tab--selected" aria-selected="true"><span class="Polaris-Tabs__Title">All</span></button></li>
+      <li role="presentation" class="Polaris-Tabs__TabContainer"><button id="accepts-marketingMeasurer" role="tab" tabindex="-1" class="Polaris-Tabs__Tab" aria-selected="false"><span class="Polaris-Tabs__Title">Accepts marketing</span></button></li>
+      <li role="presentation" class="Polaris-Tabs__TabContainer"><button id="repeat-customersMeasurer" role="tab" tabindex="-1" class="Polaris-Tabs__Tab" aria-selected="false"><span class="Polaris-Tabs__Title">Repeat customers</span></button></li>
+      <li role="presentation" class="Polaris-Tabs__TabContainer"><button id="prospectsMeasurer" role="tab" tabindex="-1" class="Polaris-Tabs__Tab" aria-selected="false"><span class="Polaris-Tabs__Title">Prospects</span></button></li><button tabindex="-1" class="Polaris-Tabs__DisclosureActivator"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20"><path d="M6 10a2 2 0 1 1-4.001-.001A2 2 0 0 1 6 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 12 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 18 10z" fill-rule="evenodd"></path></svg></span></button></div>
+  </div>

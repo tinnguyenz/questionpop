@@ -1,0 +1,12 @@
+<div class="questions-wrapper">
+  <%= render partial: "tab", locals: {current_tab: @current_tab} %>
+  <%= render partial: "message_banner" if @questions.size == 0 %>
+  <div class="Polaris-Card">
+    <% @questions.each do |question| %>
+      <%= render partial: "question_card", locals: {question: question} %>
+    <% end %>
+  </div>
+
+
+  <%= will_paginate @questions %>
+</div>

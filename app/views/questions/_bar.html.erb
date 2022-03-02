@@ -1,0 +1,27 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    var base_url = "<%= @base_url %>";
+    window.mainPageTitle = 'Manage Customer Questions';
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({
+        title: window.mainPageTitle,
+        icon: '',
+        buttons: {
+          primary: {
+            label: 'Contact Us',
+            message: 'contact',
+            callback: function() {
+              contactModal('<%= @base_url %>', '<%= @current_shop.shopify_domain %>');
+            }
+          },
+          secondary: {
+            label: "Settings",
+            callback: function() {
+              settingModal('<%= @base_url %>', '<%= @current_shop.shopify_domain %>');
+            },
+          }
+        }
+      });
+    });
+  </script>
+<% end %>

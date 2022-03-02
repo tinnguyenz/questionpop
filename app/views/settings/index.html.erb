@@ -1,0 +1,51 @@
+<form method='post' action="<%= @base_url %>settings" data-shopify-app-submit="unicorn_form_submit">
+<dl class="Polaris-DescriptionList">
+  <dt class="Polaris-DescriptionList__Term">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <h2 class="Polaris-Heading">User Message</h2>
+      </div>
+      <div class="Polaris-Card__Section" style="padding-top: 0">
+        <p>This message will be displayed above submit button.
+          E.g: "We will contact you for your query within 24 hours".
+        </p>
+      </div>
+    </div>
+  </dt>
+  <dd class="Polaris-DescriptionList__Description">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <div class="Polaris-TextField">
+          <input id="user_message" name="user_message" value="<%= @setting.user_message %>" class="Polaris-TextField__Input" aria-labelledby="TextField60Label" aria-invalid="false">
+          <div class="Polaris-TextField__Backdrop"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <dt class="Polaris-DescriptionList__Term">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <h2 class="Polaris-Heading">Notification Message</h2>
+      </div>
+      <div class="Polaris-Card__Section" style="padding-top: 0">
+        <p>Notification shown after customers submit question.
+          E.g: "We have received you question. Thanks and we'll get back"
+        </p>
+      </div>
+    </div>
+  </dt>
+  <dd class="Polaris-DescriptionList__Description">
+    <div class="Polaris-TextContainer">
+      <div class="Polaris-Card__Header">
+        <div class="Polaris-TextField">
+          <input id="notification_message" name="notification_message" value="<%= @setting.notification_message %>" class="Polaris-TextField__Input" aria-labelledby="TextField60Label" aria-invalid="false">
+          <div class="Polaris-TextField__Backdrop"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</dl>
+<input type="hidden" id="shop_domain" name="shop_domain" value="<%= @shop_domain %>" />
+</form>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <%= csrf_meta_tag %>
+  <% application_name = ShopifyApp.configuration.application_name %>
+  <title><%= application_name %></title>
+  <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/1.1.1/polaris.css?<%= Time.now.strftime('%Y%m%d%H') %>">
+
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'question', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'modals', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+  </head>
+
+<body>
+
+<%= yield %>
+
+
+<%= render 'layouts/flash_messages' %>
+
+<script src="https://cdn.shopify.com/s/assets/external/app.js?<%= Time.now.strftime('%Y%m%d%H') %>"></script>
+
+<script type="text/javascript">
+    ShopifyApp.init({
+        apiKey: "<%= ShopifyApp.configuration.api_key %>",
+        shopOrigin: "<%= "https://#{ @shop_session.url }" if @shop_session %>",
+        debug: <%= Rails.env.development? ? 'true' : 'false' %>,
+        forceRedirect: true
+    });
+</script>
+
+<% if content_for?(:javascript) %>
+  <div id="ContentForJavascript" data-turbolinks-temporary>
+    <% if controller.controller_name == 'questions' %>
+      <% render partial: "bar" %>
+    <% end %>
+    <%= yield :javascript %>
+  </div>
+<% end %>
+</body>
+</html>

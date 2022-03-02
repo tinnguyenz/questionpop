@@ -1,0 +1,8 @@
+development:
+  base_url: https://questionpop.herokuapp.com
+
+test:
+  base_url: https://questionpop.herokuapp.com/
+
+production:
+  base_url: https://questionpop.herokuapp.com
